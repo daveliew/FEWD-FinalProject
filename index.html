@@ -1,42 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-  	<meta charset="utf-8">
-  	<meta name="description" content="Bundle">
-  	<meta name="keywords" content="Gifts, Birthday, Bundles">
-		<title>Gift Bundler</title>
 
-		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Bundlr">
+	<meta name="keywords" content="Gifts, Birthdays, Bundles">
+	<title>Bundlr - The Perfect Present, Everytime. </title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,600,800' rel='stylesheet' type='text/css'>
+	<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
-	</head>
-	<body>
-		<header>
-			<div class="title">
-				<h1>Gift Bundler</h1>
-				<p>Build Your Own Gift. Perfect Anytime, Everytime.</p>
-			</div>
-		</header>
-			<div class="guest">
-				<p>I am a </p>
-				<form>
-					<input type="text" id="guest-type" placeholder="I am a...">
-					<input type="submit" value="Update" id="submit-btn">
-				</form>
-			</div>
-			<select>
-				<option>Singapore</option>
-				<option selected>Malaysia</option>
-			<div class="dropdown load">
-				<p>Looking for a </p>
-				<form>
-					<input type="text" id="guest-type" placeholder="I am a...">
-					<input type="submit" value="Update" id="submit-btn">
-				</form>
-			</div>
-			<script src="js/app.js" charset="utf-8"></script>
-			<script src="http://localhost:35729/livereload.js" charset="utf-8"></script>
-	</body>
+	<!-- external CSS link -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/animate.css">
+</head>
+
+<body>
+	<header>
+		<nav class ="clearfix">
+			<ul class="alignright">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="ideas.html">Ideas</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+		<div class="title">
+			<h1 class="animated bounceInUp">Bundlr</h1>
+			<p>Build Your Own Gift. Perfect Anytime, Everytime.</p>
+			<i class="fa fa-gift"></i>
+		</div>
+	</header>
+	<fieldset>
+		<div class="selection">
+			<label for="guest">I am a</label>
+			<select id="select1">
+				<option selected>Friend</option>
+				<option>Parent</option>
+				<option>Teacher</option>
+			</select>
+			<label for="items">looking for a </label>
+			<select id="select2">
+				<option selected>Gift</option>
+				<option>Books for 0-3yrs</option>
+				<option>Toys for 3-5yrs</option>
+			</select>
+			<input type="submit" value="Show me!" id="submit-btn">
+		</div>
+	</fieldset>
+	<div class="imageholder">
+		<img src="images/pdt1.jpg" alt="bundle packaging" />
+	</div>
+	<footer>
+		<div class="aboutus">
+			<p>Bundlr was created to save you time and money</p>
+			<p>social icons here!!</p>
+		</div>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="js/app.js" charset="utf-8"></script>
+	<script src="http://localhost:35729/livereload.js" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js" charset="utf-8"></script>
+</body>
+
 </html>

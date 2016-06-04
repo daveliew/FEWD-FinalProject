@@ -4,39 +4,45 @@ Client: Little Llama
 Author: David Liew
 */
 
+
 /******************************************
 /* SETUP
 /*******************************************/
 
+
 /* Box Model Hack */
+
 * {
-  -moz-box-sizing: border-box; /* Firexfox */
-  -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
-  box-sizing: border-box; /* IE */
+    -moz-box-sizing: border-box;
+    /* Firexfox */
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome/iOS/Android */
+    box-sizing: border-box;
+    /* IE */
 }
 
 /* Clear fix hack */
+
 .clearfix:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
 }
-
 .clear {
-	clear: both;
+    clear: both;
 }
-
 .alignright {
-	float: right;
-	padding: 0 0 10px 10px; /* note the padding around a right floated image */
+    float: right;
+    padding: 0 0 10px 10px;
+    /* note the padding around a right floated image */
 }
-
 .alignleft {
-	float: left;
-	padding: 0 10px 10px 0; /* note the padding around a left floated image */
+    float: left;
+    padding: 0 10px 10px 0;
+    /* note the padding around a left floated image */
 }
 
 /******************************************
@@ -44,99 +50,199 @@ Author: David Liew
 /*******************************************/
 
 body {
-  color: #000;
-  font-size: 12px;
-  line-height: 1.4;
-  font-family: Helvetica, Arial, sans-serif;
-  background: url(../images/citipix_skyline.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    font-size: 26px;
+    line-height: 1.4;
+    color: #000;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    background: url(../images/pdt2.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 /******************************************
 /* LAYOUT
 /*******************************************/
 
+
 /* Center the container */
+
 .container {
-	width: 960px;
-	margin: auto;
-  padding-top: 5em;
+    width: 960px;
+    margin: auto;
+    padding-top: 5em;
 }
-
 header {
-  background: rgba(0,0,0, .5);
-  padding: 20px 0;
+    background: rgba(0, 0, 0, .5);
+    padding: 20px 0;
 }
-
+nav {
+    font-size: 20px;
+    display: block;
+    background: rgba(0, 0, 0, .5);
+}
+nav li {
+    display: inline-block;
+    margin: 0px 30px;
+}
+nav li a {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: white;
+}
 .title {
-  text-align: center;
-  color: #fff;
-  font-size: 38px;
-  font-weight: bold;
-  font-family: helvetica, arial, sans-serif;
+    text-align: center;
+    color: #fff;
+    font-size: 38px;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
-
 .title p {
-  font-size: 22px;
-  font-weight: normal
+    font-size: 22px;
 }
-
-#city-type {
-  color: #6b6b6c;
-  font-size: 38px;
-  background: #fff;
-  border: 1px solid #111;
-  padding: 0px 30px;
-  display: inline-block;
-  width: 680px;
-  margin-right: 24px;
-  font-family: helvetica, arial, sans-serif;
-  height: 72px;
-  line-height: 74px;
-  vertical-align: middle;
-  box-shadow: #111 0 0 20px;
+fieldset {
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+    display: block;
+    background: white;
 }
-
+select {
+    width: 200px;
+    -webkit-appearance: none;
+    margin: 30px;
+}
+#selection {
+    font-size: 36px;
+    font-weight: 600;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
 #submit-btn {
-  background: #ffe500;
-  color: #000;
-  font-size: 38px;
-  font-weight: bold;
-  text-transform: uppercase;
-  border: 1px solid #111;
-  text-align: center;
-  display: inline-block;
-  width: 250px;
-  height: 72px;
-  line-height: 74px;
-  vertical-align: middle;
-  box-shadow: #111 0 0 50px;
-  font-family: helvetica, arial, sans-serif;
-  cursor: pointer;
+    background: tomato;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 1px solid #111;
+    text-align: center;
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+    font-family: 'Open Sans', helvetica, arial, sans-serif;
+    cursor: pointer;
 }
 #submit-btn:hover {
-  background: #fff600;
+    background: #fff600;
 }
-
-.nyc {
-  background-image: url(../images/nyc.jpg)
+.imageholder img {
+    max-width: 100%;
+    max-height: 80%;
 }
-.sf {
-  background-image: url(../images/sf.jpg)
-}
-.la {
-  background-image: url(../images/la.jpg)
-}
-.austin {
-  background-image: url(../images/austin.jpg)
-}
-.sydney {
-  background-image: url(../images/sydney.jpg)
+footer {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    background: green;
 }
 
 /******************************************
-/* ADDITIONAL STYLES
+/* SLIDER
 /*******************************************/
+
+.slider-container {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+}
+.slides li {
+    position: absolute;
+    display: table;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform .5s ease;
+}
+.slides li.selected {
+    z-index: 2;
+    transform: translateX(0);
+}
+.slides li.move-left {
+    transform: translateX(-100%);
+}
+.slides li.visible {
+    z-index: 2;
+}
+.slides li:nth-child(1) {
+    background: url(https://unsplash.it/1200/800?image=1067) no-repeat center center;
+    background-size: cover;
+}
+.slides li:nth-child(2) {
+    background: url(https://unsplash.it/1200/800?image=1068) no-repeat center center;
+    background-size: cover;
+}
+.slides li:nth-child(3) {
+    background: url(https://unsplash.it/1200/800?image=1069) no-repeat center center;
+    background-size: cover;
+}
+.slides li:nth-child(4) {
+    background: url(https://unsplash.it/1200/800?image=1070) no-repeat center center;
+    background-size: cover;
+}
+.slides li > div {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+}
+.slides h2 {
+    margin-top: 0;
+}
+.slider-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.slider-nav a {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+}
+.slider-nav a.next {
+    left: auto;
+    right: 10px;
+}
+.slider-dot-nav {
+    position: absolute;
+    z-index: 3;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.slider-dot-nav li {
+    display: inline-block;
+    margin-right: 15px;
+}
+.slider-dot-nav a {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    transition: background .3s ease;
+}
+.slider-dot-nav a.selected {
+    background: #fff;
+}
