@@ -8,6 +8,8 @@
 	<title>Bundlr - The Perfect Present, Everytime. </title>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,600,800' rel='stylesheet' type='text/css'>
 	<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel='stylesheet' type='text/css'>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel='stylesheet'>
 
 	<!-- external CSS link -->
 	<link rel="stylesheet" href="css/normalize.css">
@@ -17,44 +19,71 @@
 
 <body>
 	<header>
-		<nav class ="clearfix">
-			<ul class="alignright">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="ideas.html">Ideas</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
-		</nav>
 		<div class="title">
 			<h1 class="animated bounceInUp">Bundlr</h1>
 			<p>Build Your Own Gift. Perfect Anytime, Everytime.</p>
 			<i class="fa fa-gift"></i>
 		</div>
+		<nav class="navbar clearfix">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="ideas.html">Ideas</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
 	</header>
 	<fieldset>
 		<div class="selection">
 			<label for="guest">I am a</label>
 			<select id="select1">
-				<option selected>Friend</option>
-				<option>Parent</option>
-				<option>Teacher</option>
+				<option selected value="1">Friend</option>
+				<option value="2">Parent</option>
+				<option value="3">Teacher</option>
 			</select>
-			<label for="items">looking for a </label>
+			<label for="items">looking for </label>
 			<select id="select2">
-				<option selected>Gift</option>
-				<option>Books for 0-3yrs</option>
-				<option>Toys for 3-5yrs</option>
+				<option selected value="1">Gifts for Newborns</option>
+				<option value="1">Gifts for 1-3yr olds</option>
+				<option value="1">Gifts for 3-5yr olds</option>
+				<option value="2">Books for 0-1yrs</option>
+				<option value="2">Books for 1-3yrs</option>
+				<option value="2">Books for 3-5yrs</option>
+				<option value="3">Games for 3-5yrs</option>
+				<option value="3">Toys for 3-5yrs</option>
 			</select>
-			<input type="submit" value="Show me!" id="submit-btn">
 		</div>
+		<input type="submit" value="Show me!" class="btn" id="submit-btn">
 	</fieldset>
 	<div class="imageholder">
-		<img src="images/pdt1.jpg" alt="bundle packaging" />
+		<img src="images/pdt3.jpg" alt="bundle packaging" class="imagechange"/>
+	</div>
+	<div class="howwework">
+		<h1>Why Choose Us?</h1>
+		<div class="row">
+			<div class="col-xs-4">
+				<img src="https://unsplash.it/600/400?image=888" />
+				<p>Same Day Deliveries</p>
+			</div>
+			<div class="col-xs-4">
+				<img src="https://unsplash.it/600/400?image=999" />
+				<p>Over 500 items</p>
+			</div>
+			<div class="col-xs-4">
+				<img src="https://unsplash.it/600/400?image=555" />
+				<p>30 Day return policy</p>
+			</div>
+		</div>
 	</div>
 	<footer>
-		<div class="aboutus">
-			<p>Bundlr was created to save you time and money</p>
-			<p>social icons here!!</p>
-		</div>
+		<p>Follow us on Facebook and Twitter</P>
+		<ul>
+			<li>
+				<a href="#"><img src="images/facebook.png" alt="Facebook logo"></a>
+			</li>
+			<li>
+				<a href="#"><img src="images/twitter.png" alt="Twitter logo"></a>
+			</li>
+		</ul>
 	</footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<script src="js/app.js" charset="utf-8"></script>

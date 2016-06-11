@@ -15,91 +15,40 @@ $(document).ready(function() {
         };
     });
 
-    //Define submit and attach to submit-btn
+    //dropdown selection trigger
+    $("#select1").change(function() {
+        if ($(this).data('options') == undefined) {
+            $(this).data('options', $('#select2 option').clone());
+        }
+        var id = $(this).val();
+        var options = $(this).data('options').filter('[value=' + id + ']');
+        $('#select2').html(options);
+    });
+
+
+    //Using submit-btn we get guestType which triggers product image display in .imageholder
     var submit = $('#submit-btn');
     submit.click(function() {
         event.preventDefault();
+        $('html, body').animate({
+            scrollTop: $(".imageholder").offset().top
+        }, 1000);
 
-        var guestType = $('#guestType').val();
-        var guest = guestType.toLowerCase().trim();
-
-        // $(button).click(function() {
-        //     $("html, body").animate({
-        //         scrollTop: box.offset().top
-        //     }, 1000, function() {
-        //         box.animate({
-        //             opacity: 1
-        //         })
-        //     })
-        // })
-
-        //This resets the form
+        var guestType = $('#select1').val();
+        console.log($('.imagechange'));
+        console.log(guestType);
+        switch (guestType) {
+            case '1':
+                $('.imagechange').attr('src', 'https://unsplash.it/600/400?image=111');
+                break;
+            case '2':
+                $('.imagechange').attr('src', 'https://unsplash.it/600/400?image=222');
+                break;
+            case '3':
+                $('.imagechange').attr('src', 'https://unsplash.it/600/400?image=333');
+                break;
+            default:
+        };
         $("form").trigger("reset");
     });
 });
-
-var slider = $('.slider-container');
-var slides = $('.slides li');
-var slidesNumber = slides.length;
-var arrowNav = $('.slider-nav a');
-var dotNav = $('.slider-dot-nav');
-var dots = $('.slider-dot-nav a');
-
-var selectedSlide = 0;
-var prevSlide = 0;
-var intervalId;
-var setAutoPlay = true;
-
-arrowNav.on('click', function (event) {
-  event.preventDefault();
-  if ($(this).hasClass('next')) {
-    console.log('next');
-    var newSlideIndex = selectedSlide + 1;
-  } else {
-    console.log('prev');
-    var newSlideIndex = selectedSlide - 1;
-  }
-  showNewSlide(newSlideIndex);
-})
-
-dots.on('click', function (event) {
-  event.preventDefault();
-  var newSlideIndex = dots.index(this);
-  showNewSlide(newSlideIndex);
-});
-
-function autoPlay() {
-  intervalId = setInterval(function () {
-    showNewSlide(selectedSlide + 1);
-  }, 5000);
-}
-
-if (setAutoPlay) {
-  autoPlay();
-}
-
-function showNewSlide (index) {
-  if (index < 0) {
-    index = slidesNumber - 1;
-  }
-  if (index > slidesNumber - 1) {
-    index = 0;
-  }
-  prevSlide = selectedSlide;
-  selectedSlide = index;
-
-  for (var i = 0; i < slidesNumber; i++) {
-    if (i < selectedSlide) {
-      slides.eq(i).addClass('move-left').removeClass('selected visible');
-      dots.eq(i).removeClass('selected');
-    } else if (i == selectedSlide) {
-      slides.eq(i).addClass('selected').removeClass('move-left');
-      dots.eq(i).addClass('selected');
-    } else {
-      slides.eq(i).removeClass('selected move-left visible');
-      dots.eq(i).removeClass('selected');
-    }
-  }
-
- slides.eq(prevSlide).addClass('visible');
-}
